@@ -39,7 +39,7 @@
                        placeholder="验证码">
               </div>
               <div class="captcha-image">
-                <img v-if="form.captcha_id !== ''" :src="`http://localhost:3000/api${captchaUrl}`" class="img-rounded"
+                <img v-if="form.captcha_id !== ''" :src="`/api${captchaUrl}`" class="img-rounded"
                      title="refresh captcha"
                      alt="captcha" @click="fetchCaptcha">
               </div>
@@ -225,71 +225,61 @@ export default {
 .comment-form-container {
   margin: 20px 0;
 
-  .well {
-    min-height: 20px;
-    padding: 19px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #e3e3e3;
-    border-radius: 4px;
-    box-shadow: 1px 1px 5px rgba(97, 97, 97, .48);
+  #respond {
+    .cancel-comment-reply a {
+      color: #337ab7;
+    }
 
-    #respond {
-      .cancel-comment-reply a {
-        color: #337ab7;
+    form {
+      .form-group {
+        margin-bottom: 15px;
+
+        .btn {
+          display: inline-block;
+          margin-bottom: 0;
+          font-weight: 400;
+          text-align: center;
+          vertical-align: middle;
+          touch-action: manipulation;
+          cursor: pointer;
+          background-image: none;
+          border: 1px solid transparent;
+          white-space: nowrap;
+          padding: 6px 12px;
+          font-size: 14px;
+          line-height: 1.42857143;
+          border-radius: 4px;
+          user-select: none;
+          margin-right: 3px;
+        }
+
+        .btn-default {
+          color: #333;
+          background-color: #fff;
+          border-color: #ccc;
+        }
       }
 
-      form {
-        .form-group {
-          margin-bottom: 15px;
+      .row {
+        display: flex;
+        margin-left: -15 px;
+        margin-right: -15 px;
 
-          .btn {
-            display: inline-block;
-            margin-bottom: 0;
-            font-weight: 400;
-            text-align: center;
-            vertical-align: middle;
-            touch-action: manipulation;
-            cursor: pointer;
-            background-image: none;
-            border: 1px solid transparent;
-            white-space: nowrap;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.42857143;
-            border-radius: 4px;
-            user-select: none;
-            margin-right: 3px;
-          }
-
-          .btn-default {
-            color: #333;
-            background-color: #fff;
-            border-color: #ccc;
-          }
+        .nickname-panel, .captcha-panel {
+          width: 30%;
+          margin-right: 60px;
         }
 
-        .row {
-          display: flex;
-          margin-left: -15 px;
-          margin-right: -15 px;
-
-          .nickname-panel, .captcha-panel {
-            width: 30%;
-            margin-right: 60px;
-          }
-
-          .email-panel {
-            width: 40%;
-          }
-
-          .captcha-image img {
-            vertical-align: middle;
-            height: 36px;
-            border-radius: 4px;
-          }
-
+        .email-panel {
+          width: 40%;
         }
+
+        .captcha-image img {
+          vertical-align: middle;
+          height: 36px;
+          border-radius: 4px;
+        }
+
       }
     }
   }

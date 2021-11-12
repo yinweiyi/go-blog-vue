@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { parseResult } from './functions'
 
-const baseUrl = '/'
+const baseUrl = 'http://localhost:3000'
 
 const instance = axios.create({
   baseURL: baseUrl,

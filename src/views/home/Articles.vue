@@ -134,16 +134,6 @@ export default {
   overflow: auto;
 }
 
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  box-shadow: 1px 1px 5px rgba(97, 97, 97, .48)
-}
-
 .quote {
   box-shadow: 1px 1px 3px #5f5f5f;
 
