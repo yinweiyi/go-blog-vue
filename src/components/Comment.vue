@@ -11,7 +11,7 @@
             </a>
           </small>
         </div>
-        <form class="ajax-form" method="post" id="commentForm" v-model="form">
+        <form class="ajax-form" method="post" id="commentForm">
           <div class="row">
             <div class="nickname-panel panel">
               <div class="form-group">

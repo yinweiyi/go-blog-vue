@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/home/Home.vue'
+
+import Articles from '../views/home/Articles'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: Articles,
     meta: {
       title: '首页'
     }
@@ -16,7 +17,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "categories" */ '../views/home/Home.vue')
+    component: () => import(/* webpackChunkName: "categories" */ '../views/home/Articles.vue')
   },
   {
     path: '/tags/:slug',
@@ -24,15 +25,15 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "tags" */ '../views/home/Home.vue')
+    component: () => import(/* webpackChunkName: "tags" */ '../views/home/Articles.vue')
   },
   {
-    path: '/articles/:slug',
+    path: '/articles/:article',
     name: 'Articles',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "articles" */ '../views/articles/Home.vue')
+    component: () => import(/* webpackChunkName: "articles" */ '../views/articles/ArticleDetail.vue')
   }
   ,
   {
@@ -41,7 +42,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/about/Home.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/about/About.vue')
   },
   {
     path: '/guestbook',
@@ -49,7 +50,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "guestbook" */ '../views/guestbook/Home.vue')
+    component: () => import(/* webpackChunkName: "guestbook" */ '../views/guestbook/Guestbook.vue')
   }
 ]
 

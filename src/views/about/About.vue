@@ -36,7 +36,8 @@ export default {
     Comments,
     Comment
   },
-  setup () {
+  props:['active'],
+  setup (props, context) {
     const commentParentId = ref(0)
     provide('commentParentId', commentParentId)
     provide('handleChangeCommentParentId', (parentId) => {
@@ -48,6 +49,7 @@ export default {
     } = getAboutEffect()
     onMounted(() => {
       fetchAbout()
+      context.emit("update:active", 'about')
     })
 
     return { abouts }

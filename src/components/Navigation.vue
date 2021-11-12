@@ -5,13 +5,13 @@
         <router-link to="/" class="navbar-brand">忆未乙 | 个人博客</router-link>
       </div>
       <ul class="menus">
-        <li :class="{menu:true, active : active === 'home'}">
+        <li :class="{menu:true, active : ['Home', 'Categories', 'Tags'].includes(activeRoute) }">
           <router-link to="/">首页</router-link>
         </li>
-        <li :class="{menu:true, active : active === 'about'}">
+        <li :class="{menu:true, active : activeRoute === 'About'}">
           <router-link to="/about">关于</router-link>
         </li>
-        <li :class="{menu:true, active : active === 'guestbook'}">
+        <li :class="{menu:true, active : activeRoute === 'Guestbook'}">
           <router-link to="/guestbook">留言</router-link>
         </li>
       </ul>
@@ -20,9 +20,18 @@
 </template>
 
 <script>
+import {useRoute} from 'vue-router'
+import { computed } from 'vue'
 export default {
   name: 'Navigation',
-  props: ['active']
+  setup() {
+    const route = useRoute()
+    const activeRoute = computed(() => {
+      return route.name
+    })
+
+    return {activeRoute}
+  }
 }
 </script>
 

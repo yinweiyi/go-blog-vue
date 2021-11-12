@@ -3,7 +3,7 @@
     <div class="comments" v-for="comment in comments" :id="`comment-${comment.id}`">
       <div class="comment">
         <div class="comment-author vcard">
-          <img :src="`http://www.ewayee.com${comment.avatar}`" alt="用户评论头像" class="img-circle">
+          <img :src="`/assets${comment.avatar}`" alt="用户评论头像" class="img-circle">
           <strong>{{ comment.nickname }} </strong>：
           <span class="datetime">发表于 {{ comment.created_at }}
             <span class="reply">

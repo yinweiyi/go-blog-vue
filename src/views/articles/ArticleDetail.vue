@@ -94,8 +94,10 @@ export default {
     } = fetchArticleEffect()
 
     watchEffect(() => {
-      const slug = route.params.slug
-      fetchArticle(slug)
+      const article = route.params.article
+      if (article) {
+        fetchArticle(article)
+      }
     })
 
     return {
